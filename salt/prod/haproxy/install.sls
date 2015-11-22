@@ -2,13 +2,13 @@ include:
   - pkg.pkg-init
 haproxy-install:
   file.managed:
-    - name: /usr/local/src/haproxy-1.5.15.tar.gz
-    - source: salt://haproxy/files/haproxy-1.5.15.tar.gz
+    - name: /usr/local/src/haproxy-1.6.2.tar.gz
+    - source: salt://haproxy/files/haproxy-1.6.2.tar.gz
     - mode: 755
     - user: root
     - group: root
   cmd.run:
-    - name: cd /usr/local/src && tar zxf haproxy-1.5.15.tar.gz && cd haproxy-1.5.15 && make TARGET=linux26 PREFIT=/usr/local/haproxy && make  install PREFIX=/usr/local/haproxy
+    - name: cd /usr/local/src && tar zxf haproxy-1.6.2.tar.gz && cd haproxy-1.6.2 && make TARGET=linux26 PREFIT=/usr/local/haproxy && make  install PREFIX=/usr/local/haproxy
     - unless: test -d /usr/local/haproxy
     - require:
        - pkg: pkg-init

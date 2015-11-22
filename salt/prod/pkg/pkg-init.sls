@@ -9,3 +9,4 @@ pkg-init:
       - openssl
       - openssl-devel
       - python-devel
+      - vim-enhanced
